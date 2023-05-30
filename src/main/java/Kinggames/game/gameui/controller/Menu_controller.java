@@ -11,6 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
+
+
 import java.io.IOException;
 
 
@@ -34,8 +37,8 @@ public class Menu_controller {
     if (userInput.getText().isEmpty()){
         userInput.setPromptText("cant be empty");
     }else {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Game.fxml"));
-
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Game.fxml"));
+        Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -45,7 +48,13 @@ public class Menu_controller {
     }
 
     @FXML
-    void Loadscore(ActionEvent event) {
+    void Loadscore(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Scoreboard.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

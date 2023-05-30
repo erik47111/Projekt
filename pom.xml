@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>hu.unideb.inf</groupId>
-    <artifactId>Szoftverbadandó</artifactId>
+    <artifactId>Project</artifactId>
     <version>1.0</version>
     <description>2 király feltváltva lépked egy 8x8 táblán,minden lépés után egy mezőt eltávolítunk</description>
     <developers>
@@ -26,7 +26,9 @@
         <maven.checkstyle.version>3.2.1</maven.checkstyle.version>
         <maven.surefire.version>3.0.0</maven.surefire.version>
         <jacoco.version>0.8.9</jacoco.version>
-        <exec.mainClass>Kinggames/game/GameApplication.java</exec.mainClass>
+        <exec.mainClass>Kinggames.game.gameui.Main</exec.mainClass>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -53,6 +55,32 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+        <groupId>org.tinylog</groupId>
+        <artifactId>tinylog-api</artifactId>
+        <version>2.4.1</version>
+        <scope>compile</scope>
+         </dependency>
+        <dependency>
+            <groupId>org.tinylog</groupId>
+            <artifactId>tinylog-impl</artifactId>
+            <version>2.4.1</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <dependency>
+                <groupId>org.jdom</groupId>
+                <artifactId>jdom2</artifactId>
+                <version>2.0.6</version>
+        </dependency>
+
+
+
+
+
     </dependencies>
     <build>
         <plugins>
